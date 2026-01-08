@@ -87,6 +87,26 @@ td[data-subarea="formacao_docente"].aprovado {
   background-color: #ffd688;
 }
 
+td[data-subarea="contexto_social_e_profissional"].aprovado {
+  background-color: #f6b59a;
+}
+
+td[data-subarea="Matematica"].aprovado {
+  background-color: #b1d2a1;
+}
+
+td[data-subarea="Fundamentos_da_computacao"].aprovado {
+  background-color: #a2b2dd;
+}
+
+td[data-subarea="Tecnologia_da_Computacao"].aprovado {
+  background-color:#aac6e7;
+}
+
+td[data-subarea="Optativas"].aprovado {
+  background-color:#525252;
+}
+
 .reprovado {
     background-color: #e74c3c;
     color: #fff;
