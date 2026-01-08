@@ -3,29 +3,58 @@
  **************************************************/
 const OPTATIVAS = {
   computacao_educacional: [
-    { id: "pratica_algoritmos", nome: "Prática de Ensino de Algoritmos", prereq: [] },
-    { id: "jogos_educacao", nome: "Jogos Digitais na Educação", prereq: [] },
-    { id: "mineracao_dados_educ", nome: "Mineração de Dados Educacionais", prereq: ["Estatistica"] }
+    { id: "Design_Instrucional", nome: "Design Instrucional", prereq: [""] },
+    { id: "Inovacao_Em_Educacao", nome: "Inovação em Educação", prereq: [""] },
+    { id: "Jogos_Digitais_na_Educacao", nome: "Jogos Digitais na Educação", prereq: [""] },
+    { id: "Mineracao_de_Dados_Educacionais", nome: "Mineração de Dados Educacionais", prereq: ["Estatistica", "CalculoI", "CalculoII"] },
+    { id: "Projetos_de_Sistemas_Educacionais", nome: "Projetos de Sistemas Educacionais", prereq: ["TecnologianaEducacao"] },
+    { id: "Topicos_Avançados_de_Educacao_em_Computacao", nome: "Tópicos Avançados de Educação em Computação", prereq: ["programacao2", "programacao1"] },
+    { id: "Prática_de_Ensino_de_Algoritmos", nome: "Prática de Ensino de Algoritmos", prereq: [""] },
+    { id: "Prática_de_Ensino_de_Logico", nome: "Prática de Ensino de Lógica", prereq: [""] },
+    { id: "Prática_de_Ensino_de_Redes_e_Sistemas_Internet", nome: "Prática de Ensino de Redes e Sistemas Internet", prereq: [""] },
+    { id: "Prática_de_Ensino_de_Interfaces_Homem-Maquina", nome: "Prática de Ensino de Interfaces Homem-Maquina", prereq: [""] },
+    { id: "Prática_de_Ensino_de_Computabilidade", nome: "Prática de Ensino de Computabilidade", prereq: [""] },
+    { id: "Topicos_Avançados_em_Educacao_a_Distancia", nome: "Tópicos Avançados de Educação a Distância", prereq: ["ead", "redes", "programacao1", "programacao2"] },
   ],
   engenharia_software: [
+    { id: "Análise_e_Projeto_de_Sistemas_Orientados_a_Objeto", nome: "Análise e Projeto de Sistemas Orientados a Objeto", prereq: ["engsoft", "programacao2", "pc"] },
     { id: "gerencia_projetos", nome: "Gerência de Projetos", prereq: ["engsoft"] },
-    { id: "analise_oo", nome: "Análise e Projeto OO", prereq: ["engsoft", "programacao2"] }
+    { id: "Computacao_Empreendedorismo", nome: "Computação e Empreendedorismo", prereq: ["programacao1", "pc"] },
+    { id: "Engenharia_de_Requisitos", nome: "Engenharia de Requisitos", prereq: ["engsoft"] },
+    { id: "Gestao_da_Informacao_e_do_Conhecimento", nome: "Gestão da Informação e do Conhecimento", prereq: ["engsoft"] },
+    { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"] },
+    { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"] },
+    { id: "Governanca_de_TI", nome: "Governança de TI", prereq: ["engsoft"] },
+    { id: "Inovacao_em_projetos_de_software", nome: "Inovação em Projetos de Software", prereq: ["engsoft"] },
   ],
   fundamentos_computacionais: [
     { id: "algoritmos_grafos", nome: "Algoritmos em Grafos", prereq: ["algoritmos", "programacao1", "discreta1"] },
-    { id: "realidade_virtual", nome: "Realidade Virtual", prereq: ["programacao2"] }
+    { id: "Fisica_para_Computacao", nome: "Física para Computação", prereq: ["CalculoI", "CalculoII"] },
+    { id: "Paradigmas_de_Programacao", nome: "Paradigmas de Programação", prereq: ["programacao2", "pc"] },
+    { id: "Logica_e_Programacao_Logica", nome: "Lógica e Programação Lógica", prereq: ["programacao1", "pc"] }
   ],
   inteligencia_artificial: [
-    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"] },
-    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "Estatistica"] }
+    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "pc"] },
+    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica", "pc"] },
+    { id: "Sistemas_Multiagentes", nome: "Sistemas Multiagentes", prereq: ["ia", "programacao2", "pc"] },
+    { id: "Biologia_Computacional", nome: "Biologia Computacional", prereq: ["algoritmos"] },
+    { id: "Topicos_Avançados_em_Inteligencia_Artificial", nome: "Tópicos Avançados em Inteligência Artificial", prereq: ["ia", "programacao2", "programacao1"] },
+
   ],
   Interface_RealidadeVirtual: [
-    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"] },
-    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "Estatistica"] }
+    { id: "Computacao_Grafica_Basica", nome: "Computação Gráfica Básica", prereq: ["AlgebraLinear", "pc", "programacao1"] },
+    { id: "Processamento_de_Imagens", nome: "Processamento de Imagens", prereq: ["programacao1", "pc"] },
+    { id: "Realidade_Virtual", nome: "Realidade Virtual", prereq: ["AlgebraLinear", "programacao1", "pc"] },
+    { id: "Visao_computacional", nome: "Visão Computacional", prereq: ["AlgebraLinear", "programacao1", "pc"] },
+    { id: "Jogos_Digitais", nome: "Jogos Digitais", prereq: ["algoritmos", "programacao2", "programacao1", "discreta1", "pc"] },
   ],
   Infraestrutura_De_Hardware: [
-    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"] },
-    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "Estatistica"] }
+    { id: "Analise_de_Desempenho", nome: "Análise de Desempenho", prereq: ["Estatistica", "CalculoI", "CalculoII"] },
+    { id: "Desenvolvimento_de_Aplicacoes_para_TV", nome: "Desenvolvimento de Aplicações para TV", prereq: ["Sistemas_Distribuidos"] },
+    { id: "Internet_Do_Futuro", nome: "Internet do Futuro", prereq: ["redes"] },
+    { id: "Sistemas_Distribuidos", nome: "Sistemas Distribuídos", prereq: ["redes"] },
+    { id: "Computacao_para_analise_de_dados", nome: "Computacao para analise de dados", prereq: ["Estatistica","CalculoI", "CalculoII", "programacao1", "pc"] },
+    { id: "Robotica_Educacional", nome: "Robótica Educacional", prereq: [""] }
   ],
   Infraestrutura_De_Software: [
     { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"] },
@@ -143,9 +172,6 @@ const Optativas = {
 
 /**************************************************
  * 5. PROGRESSO DO CURSO
- **************************************************/
-/**************************************************
- * 5. PROGRESSO DO CURSO (VERSÃO CORRETA)
  **************************************************/
 const Progresso = {
 

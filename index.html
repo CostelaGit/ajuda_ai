@@ -27,7 +27,7 @@
           <td data-id="fundamentos" data-ch="60" data-subarea="formacao_docente">Fundamentos Filosóficos...</td>
           <td data-id="educ_brasileira" data-prereq="fundamentos" data-ch="60" data-subarea="formacao_docente">Educação Brasileira</td>
           <td data-id="didatica" data-ch="60" data-subarea="formacao_docente">Didática</td>
-          <td data-id="mec" data-ch="60" data-subarea="formacao_docente">Metodologia do Ensino</td>
+          <td data-id="mec" data-ch="60" data-prereq="didatica" data-subarea="formacao_docente">Metodologia do Ensino</td>
           <td data-id="pratica1" data-ch="60" data-subarea="formacao_docente" >Prática I</td>
           <td data-id="pratica2" data-prereq="pratica1" data-ch="60" data-subarea="formacao_docente">Prática II</td>
           <td data-id="ead" data-prereq="fundamentos" data-ch="60" data-subarea="formacao_docente">Educação a Distância</td>
@@ -55,7 +55,7 @@
           <td data-id="AlgebraLinear" data-prereq="" data-ch="60" data-subarea="Matematica">Algebra Linear</td>
           <td data-id="TecnologianaEducacao" data-ch="60" data-subarea="contexto_social_e_profissional">Tecnologia na Educacao</td>
           <td data-id="EducaçãodasRelaçõesÉtnicoRaciais" data-ch="60" data-subarea="formacao_docente">Educação das Relações Étnico-Raciais</td>
-          <td data-id="ProjetodeDesenvolvimentodeSoftwareEducacional" data-ch="60" data-subarea="Tecnologia_da_Computacao">Projeto de Desenvolvimento de Software Educacional</td>
+          <td data-id="ProjetodeDesenvolvimentodeSoftwareEducacional" data-ch="60" data-prereq="engsoft, programacao2, pc" data-subarea="Tecnologia_da_Computacao">Projeto de Desenvolvimento de Software Educacional</td>
           <td data-slot="optativa6" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 6</td>
         </tr>
 
@@ -64,7 +64,7 @@
           <td data-id="discreta2" data-prereq="discreta1" data-ch="60" data-subarea="Matematica">Discreta II</td>
           <td data-id="circuitos" data-ch="60" data-subarea="Fundamentos_da_computacao">Circuitos Digitais</td>
           <td data-id="arquitetura" data-prereq="circuitos" data-ch="60" data-subarea="Fundamentos_da_computacao">Arquitetura Org. Computadores</td>
-          <td data-id="so" data-prereq="algoritmos,arquitetura" data-ch="60" data-subarea="Tecnologia_da_Computacao">Sistemas Operacionais</td>
+          <td data-id="so" data-prereq="circuitos,algoritmos,arquitetura,programacao1,programacao2,discreta1,discreta2" data-ch="60" data-subarea="Tecnologia_da_Computacao">Sistemas Operacionais</td>
           <td data-id="ihc" data-ch="60" data-subarea="Tecnologia_da_Computacao">Interação Homem-Maquina</td>
           <td data-slot="optativa2" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 2</td>
           <td data-slot="optativa4" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 4</td>
@@ -74,10 +74,10 @@
         <tr>
           <td data-id="pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Pensamento Computacional</td>
           <td data-id="programacao1" data-prereq="pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Prog I</td>
-          <td data-id="programacao2" data-prereq="programacao1" data-ch="60" data-subarea="Fundamentos_da_computacao">Prog II</td>
+          <td data-id="programacao2" data-prereq="programacao1, pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Prog II</td>
           <td data-id="tc" data-prereq="discreta1,discreta2" data-ch="60" data-subarea="Fundamentos_da_computacao">Teoria da computação</td>
           <td data-id="engsoft" data-ch="60" data-subarea="Tecnologia_da_Computacao">Engenharia de Software</td>
-          <td data-id="ia" data-prereq="programacao2" data-ch="60" data-subarea="Tecnologia_da_Computacao">Inteligencia Artificial</td>
+          <td data-id="ia" data-prereq="programacao2,pc" data-ch="60" data-subarea="Tecnologia_da_Computacao">Inteligencia Artificial</td>
           <td data-slot="optativa3" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 3</td>
           <td data-slot="optativa5" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 5</td>
         </tr>
