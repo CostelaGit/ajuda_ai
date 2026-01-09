@@ -372,11 +372,13 @@ document.getElementById("exportar-pdf").addEventListener("click", async () => {
 
   // Clonagem dos blocos relevantes
   const grade = document.querySelector(".grade-area").cloneNode(true);
+  const atividades = document.querySelector(".ac-lista").cloneNode(true);
   const progresso = document.querySelector(".progresso-area").cloneNode(true);
+
 
   const botaoClone = progresso.querySelector("#exportar-pdf");
   if (botaoClone) botaoClone.remove();
-
+  
   // Substitui progress por barras estáticas
   progresso.querySelectorAll(".barra").forEach(barra => {
     const pct = barra.querySelector("strong")?.innerText || "0%";
@@ -397,6 +399,7 @@ document.getElementById("exportar-pdf").addEventListener("click", async () => {
   container.style.fontFamily = "Arial, sans-serif";
 
   container.appendChild(grade);
+  container.appendChild(atividades);
   container.appendChild(document.createElement("hr"));
   container.appendChild(progresso);
 

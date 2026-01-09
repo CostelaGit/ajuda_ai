@@ -198,3 +198,12 @@ td[data-subarea="Optativas"].aprovado {
   display: block;
   margin: 16px auto 0 auto;
 }
+
+.exportacao-pdf section {
+  margin-bottom: 24px;
+  page-break-inside: avoid;
+}
+
+.exportacao-pdf .progresso-area {
+  page-break-before: always;
+}
