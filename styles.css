@@ -173,3 +173,28 @@ td[data-subarea="Optativas"].aprovado {
 .ac-lista button:hover {
   text-decoration: underline;
 }
+
+
+.exportacao progress {
+  display: none;
+}
+
+.exportacao .barra {
+  margin-bottom: 14px;
+}
+
+.exportacao .barra .barra-fake {
+  height: 14px;
+  background: #2c3e50;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+.exportacao .ppc-download {
+  display: none;
+}
+
+#exportar-pdf {
+  display: block;
+  margin: 16px auto 0 auto;
+}

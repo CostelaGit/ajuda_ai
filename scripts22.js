@@ -23,7 +23,6 @@ const OPTATIVAS = {
     { id: "Engenharia_de_Requisitos", nome: "Engenharia de Requisitos", prereq: ["engsoft"] },
     { id: "Gestao_da_Informacao_e_do_Conhecimento", nome: "Gestão da Informação e do Conhecimento", prereq: ["engsoft"] },
     { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"] },
-    { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"] },
     { id: "Governanca_de_TI", nome: "Governança de TI", prereq: ["engsoft"] },
     { id: "Inovacao_em_projetos_de_software", nome: "Inovação em Projetos de Software", prereq: ["engsoft"] },
   ],
@@ -365,5 +364,60 @@ const AtividadesComplementares = {
     });
   }
 };
+
+
+
+document.getElementById("exportar-pdf").addEventListener("click", async () => {
+  const { jsPDF } = window.jspdf;
+
+  // Clonagem dos blocos relevantes
+  const grade = document.querySelector(".grade-area").cloneNode(true);
+  const progresso = document.querySelector(".progresso-area").cloneNode(true);
+
+  const botaoClone = progresso.querySelector("#exportar-pdf");
+  if (botaoClone) botaoClone.remove();
+
+  // Substitui progress por barras estáticas
+  progresso.querySelectorAll(".barra").forEach(barra => {
+    const pct = barra.querySelector("strong")?.innerText || "0%";
+
+    const fake = document.createElement("div");
+    fake.className = "barra-fake";
+    fake.style.width = pct;
+
+    barra.appendChild(fake);
+  });
+
+  // Container temporário
+  const container = document.createElement("div");
+  container.classList.add("exportacao");
+  container.style.width = "1200px";
+  container.style.padding = "20px";
+  container.style.background = "#ffffff";
+  container.style.fontFamily = "Arial, sans-serif";
+
+  container.appendChild(grade);
+  container.appendChild(document.createElement("hr"));
+  container.appendChild(progresso);
+
+  document.body.appendChild(container);
+
+  // Renderização
+  const canvas = await html2canvas(container, {
+    scale: 2.5,
+    backgroundColor: "#ffffff"
+  });
+
+  const imgData = canvas.toDataURL("image/png");
+  const pdf = new jsPDF("p", "mm", "a4");
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const imgHeight = (canvas.height * pageWidth) / canvas.width;
+
+  pdf.addImage(imgData, "PNG", 0, 0, pageWidth, imgHeight);
+  pdf.save("grade_curricular_progresso.pdf");
+
+  document.body.removeChild(container);
+});
 
 
