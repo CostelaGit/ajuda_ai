@@ -207,3 +207,11 @@ td[data-subarea="Optativas"].aprovado {
 .exportacao-pdf .progresso-area {
   page-break-before: always;
 }
+
+td[data-modalidade]::after {
+  content: attr(data-modalidade);
+  display: block;
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 2px;
+}
