@@ -28,6 +28,7 @@ body {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .navbar a:hover {
@@ -128,6 +129,9 @@ td[data-modalidade="EAD"] {
 ========================= */
 @media (max-width: 768px) {
   .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
     flex-wrap: wrap;
   }
 
@@ -139,5 +143,33 @@ td[data-modalidade="EAD"] {
 
   .tabela td[data-slot] {
     height: 50px;
+  }
+
+    .tabela td[data-id] {
+    padding: 12px 8px;
+    font-size: 0.9rem;
+  }
+
+  .navbar a {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+  }
+    .disciplinas-scroll {
+    max-height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+  }
+    .disciplinas-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .disciplinas-scroll::-webkit-scrollbar-thumb {
+    background-color: #bbb;
+    border-radius: 4px;
   }
 }

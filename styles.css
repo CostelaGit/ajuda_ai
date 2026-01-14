@@ -276,3 +276,87 @@ td[data-modalidade]::after {
 .navbar a:hover {
   text-decoration: underline;
 }
+
+
+/* =========================================================
+   13. RESPONSIVIDADE (MOBILE)
+   ========================================================= */
+@media (max-width: 768px) {
+
+
+  /* ----- LAYOUT ----- */
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "grade"
+      "optativas"
+      "progresso";
+    padding: 12px;
+    gap: 16px;
+  }
+
+  /* ----- CARDS ----- */
+  .grade-area,
+  .optativas-area,
+  .progresso-area {
+    padding: 12px;
+  }
+
+  /* ----- TABELA ----- */
+  .tabela {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+
+  .tabela th,
+  .tabela td {
+    padding: 8px;
+  }
+
+  /* melhora usabilidade no toque */
+  .tabela td {
+    min-width: 90px;
+  }
+
+  /* ----- MODALIDADE (SUBTEXTO) ----- */
+  td[data-modalidade]::after {
+    font-size: 0.65rem;
+  }
+
+  /* ----- NAVBAR ----- */
+  .navbar {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  background: var(--bg-header);
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+
+  .navbar a {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  /* ----- LISTA DE ATIVIDADES ----- */
+  .ac-lista li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .ac-lista button {
+    align-self: flex-end;
+  }
+
+  /* ----- EXPORTAÇÃO ----- */
+  #exportar-pdf {
+    width: 100%;
+  }
+}
