@@ -120,36 +120,91 @@ const DISCIPLINAS = {
   },
   Metodologia_Cientifica: {
     nome: "Metodologia Científica",
-    slots: ["qua-20:30", "sex-18:10"]
+    slots: ["qua-20:10", "sex-18:30"]
   },
   Pratica_1 : {
     nome:"Prática 1 (EAD)",
     slots:["sab-08:00","sab-10:00"]
   },
    /* 6 periodo */
-  Redes_de_Computadores: {
-    nome: "Redes de Computadores",
-    slots: ["seg-18:30", "qui-20:10"]
+  ESO1: {
+    nome: "ESO I",
+    slots: ["seg-18:30", "seg-20:10"]
   },
-  Algebra_Linear: {
-    nome: "Álgebra Linear",
-    slots: ["ter-18:30", "sex-20:10"]
+  Tecnologia_na_Educacao: {
+    nome: "Tecnologia na Educação",
+    slots: ["qua-18:30", "sex-20:10"]
   },
-  Sistemas_Operacionais: {
-    nome: "Sistemas Operacionais",
+  IHM: {
+    nome: "Interação Homem-Maquina",
+    slots: ["ter-18:30", "qui-20:10"]
+  },
+  IA: {
+    nome: "Inteligencia Artificial",
     slots: ["ter-20:10", "qui-18:30"]
   },
-  Engenharia_de_Software: {
-    nome: "Engenharia de Software",
-    slots: ["seg-20:10", "qua-18:30"]
+  Optativa_1: {
+    nome: "Optativa_1",
+    slots: ["", ""]
   },
-  Metodologia_Cientifica: {
-    nome: "Metodologia Científica",
-    slots: ["qua-20:30", "sex-18:10"]
-  },
-  Pratica_1 : {
-    nome:"Prática 1 (EAD)",
+  Pratica_2 : {
+    nome:"Prática 2 (EAD)",
     slots:["sab-08:00","sab-10:00"]
+  },
+  /* 7 periodo */
+  ESO2: {
+    nome: "ESO II",
+    slots: ["ter-18:30", "ter-20:10"]
+  },
+  educacao_distancia: {
+    nome: "Educação à Distância",
+    slots: ["seg-18:30", "qui-20:10"]
+  },
+  Educacao_RAR: {
+    nome: "Educação das Relações Étnico-Raciais",
+    slots: ["qui-18:30", "seg-20:10"]
+  },
+  Optativa_2: {
+    nome: "Optativa_2",
+    slots: ["", ""]
+  },
+  Optativa_3: {
+    nome: "Optativa_3",
+    slots: ["", ""]
+  },
+  /* 8 periodo */
+  ESO3: {
+    nome: "ESO III",
+    slots: ["sex-18:30", "sex-20:10"]
+  },
+  Libras: {
+    nome: "Libras",
+    slots: ["seg-18:30", "qua-20:10"]
+  },
+  Projeto_Dev: {
+    nome: "Projeto de Desenvolvimento de Software Educacional",
+    slots: ["qua-18:30", "seg-20:10"]
+  },
+  Optativa_4: {
+    nome: "Optativa_4",
+    slots: ["", ""]
+  },
+  Optativa_5: {
+    nome: "Optativa_5",
+    slots: ["", ""]
+  },
+    /* 9 periodo */
+  ESO4: {
+    nome: "ESO IV",
+    slots: ["qui-18:30", "qui-20:10"]
+  },
+  Optativa_6: {
+    nome: "Optativa_6",
+    slots: ["", ""]
+  },
+  TCC: {
+    nome: "TCC",
+    slots: ["", ""]
   },
 };
 
