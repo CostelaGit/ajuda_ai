@@ -1,65 +1,87 @@
-/* RESET BÁSICO */
-* {
+/**************************************************
+ * 1. RESET E NORMALIZAÇÃO
+ **************************************************/
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ESTILO GLOBAL */
+
+/**************************************************
+ * 2. ESTILO BASE (DOCUMENTO)
+ **************************************************/
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f6f8;
-  color: #333;
+  color: #333333;
   line-height: 1.6;
 }
 
-/* NAVBAR */
+
+/**************************************************
+ * 3. NAVEGAÇÃO
+ **************************************************/
 .navbar {
-  background-color: #0f3d2e;
   display: flex;
   justify-content: center;
-  gap: 25px;
-  padding: 15px;
+  gap: 20px;
+
+  background-color: #2c3e50;
+  padding: 12px;
 }
 
 .navbar a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .navbar a:hover {
   text-decoration: underline;
 }
 
-/* CABEÇALHO */
+
+/**************************************************
+ * 4. CABEÇALHO DO CURSO
+ **************************************************/
 .header-curso {
   background-color: #1f4f3a;
-  color: #ffffff; /* CONTRASTE CORRIGIDO */
+  color: #ffffff;
+
   text-align: center;
   padding: 50px 20px;
 }
 
 .header-curso h1 {
-  font-size: 2.4em;
+  font-size: 2.4rem;
   margin-bottom: 10px;
 }
 
 .header-curso p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   opacity: 0.9;
 }
 
-/* CONTAINER PRINCIPAL */
+
+/**************************************************
+ * 5. CONTAINER PRINCIPAL
+ **************************************************/
 .container {
   max-width: 900px;
   margin: 40px auto;
+
   background-color: #ffffff;
   padding: 30px;
   border-radius: 6px;
 }
 
-/* SEÇÕES */
+
+/**************************************************
+ * 6. SEÇÕES E CONTEÚDO
+ **************************************************/
 section {
   margin-bottom: 35px;
 }
@@ -73,10 +95,14 @@ ul {
   margin-left: 20px;
 }
 
-/* RODAPÉ */
+
+/**************************************************
+ * 7. RODAPÉ
+ **************************************************/
 .footer {
   background-color: #e0e0e0;
+
   text-align: center;
   padding: 20px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
