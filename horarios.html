@@ -1,106 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horários</title>
-      <link rel="stylesheet" href="styles_h.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulação de Matrícula</title>
+  <link rel="stylesheet" href="styles_h.css">
 </head>
 <body>
 
-
-    <nav class="navbar">
-    <a href="curso.html">Curso</a>
+<nav class="navbar">
+  <a href="curso.html">Curso</a>
   <a href="index.html">Grade</a>
-    <a href="horarios.html">horarios</a>
+  <a href="horarios.html">Horários</a>
   <a href="sobre.html">Sobre</a>
 </nav>
 
+<main class="grade-area">
 
-    <main class="grade-area">
-    <h2>Grade Curricular</h2>
+  <!-- ========================= -->
+  <!-- LISTA DE DISCIPLINAS -->
+  <!-- ========================= -->
+  <h2>Disciplinas</h2>
 
-    <table class="tabela">
-      <thead>
-        <tr>
-          <th>1º</th><th>2º</th><th>3º</th><th>4º</th><th>5º</th>
-          <th>6º</th><th>7º</th><th>8º</th><th>9º</th>
-        </tr>
-      </thead>
+  <table class="tabela">
+    <tbody>
+      <tr>
+        <td data-id="psicologia1">Psicologia I</td>
+        <td data-id="pensamento_comp">Pensamento Computacional</td>
+        <td data-id="prod_textos">Produção de Textos Acadêmicos I</td>
+        <td data-id="fundamentos_filo">Fundamentos Filosóficos da Educação</td>
+        <td data-id="matematica_discreta">Matemática Discreta I</td>
+        <td data-id="ava" data-modalidade="EAD">AVA (EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="educacao_brasileira">Educação Brasileira</td>
+        <td data-id="psicologia2">Psicologia II</td>
+        <td data-id="calculo1">Cálculo N I</td>
+        <td data-id="matematica_discreta2">Matemática Discreta II</td>
+        <td data-id="programacao1">Programação I</td>
+        <td data-id="Lab_programacao1" data-modalidade="EAD">Lab Programação I (EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="Didatica">Didatica</td>
+        <td data-id="Algo_Estrutura_Dados">Algoritmos e Estruturas de Dados</td>
+        <td data-id="calculo2">Cálculo N II</td>
+        <td data-id="Circuitos_Digitais">Circuitos Digitais</td>
+        <td data-id="programacao2">Programação II</td>
+        <td data-id="Lab_programacao2" data-modalidade="EAD">Lab Programação II (EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="Metodologia_Ensino">Metodologia do Ensino</td>
+        <td data-id="Banco_Dados">Banco de Dados</td>
+        <td data-id="Estatistica_Exploratoria">Estatística Exploratória</td>
+        <td data-id="Arq_Org_Computadores">Arquitetura e Organização de Computadores</td>
+        <td data-id="Teoria_da_Computação">Teoria da Computação</td>
+        <td data-id="AHSC" data-modalidade="EAD">AHSC (EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="Redes_de_Computadores">Redes de Computadores</td>
+        <td data-id="Algebra_Linear">Álgebra Linear</td>
+        <td data-id="Sistemas_Operacionais">Sistemas Operacionais</td>
+        <td data-id="Engenharia_de_Software">Engenharia de Software</td>
+        <td data-id="Metodologia_Cientifica">Metodologia Científica</td>
+        <td data-id="Pratica_1" data-modalidade="EAD">Prática 1 (EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="ESO1">ESO I</td>
+        <td data-id="Tecnologia_na_Educacao">Tecnologia na Educação</td>
+        <td data-id="IHM">Interação Homem-Maquina</td>
+        <td data-id="IA">Inteligencia Artificial</td>
+        <td data-id="Optativa_1">Optativa 1</td>
+        <td data-id="Pratica_2" data-modalidade="EAD">Prática 2(EAD)</td>
+      </tr>
+      <tr>
+        <td data-id="educacao_brasileira">Educação Brasileira</td>
+        <td data-id="psicologia2">Psicologia II</td>
+        <td data-id="calculo1">Cálculo I</td>
+        <td data-id="matematica_discreta2">Matemática Discreta II</td>
+        <td data-id="programacao1">Programação I</td>
+        <td data-id="Lab_programacao1" data-modalidade="EAD">Lab Programação I (EAD)</td>
+      </tr>
+    </tbody>
+  </table>
 
-      <tbody>
-        <tr>
-          <td data-id="fundamentos" data-ch="60" data-subarea="formacao_docente">Fundamentos Filosóficos </td>
-          <td data-id="educ_brasileira" data-prereq="fundamentos" data-ch="60" data-subarea="formacao_docente">Educação Brasileira</td>
-          <td data-id="didatica" data-ch="60" data-subarea="formacao_docente">Didática</td>
-          <td data-id="mec" data-ch="60" data-prereq="didatica" data-subarea="formacao_docente">Metodologia do Ensino</td>
-          <td data-id="pratica1" data-ch="60" data-subarea="formacao_docente" data-modalidade="EAD">Prática I</td>
-          <td data-id="pratica2" data-prereq="pratica1" data-ch="60" data-subarea="formacao_docente" data-modalidade="EAD">Prática II</td>
-          <td data-id="ead" data-prereq="fundamentos" data-ch="60" data-subarea="formacao_docente">Educação a Distância</td>
-          <td data-id="eso3" data-prereq="eso2" data-ch="90" data-subarea="contexto_social_e_profissional">ESO III</td>
-          <td data-id="eso4" data-prereq="eso3" data-ch="135" data-subarea="contexto_social_e_profissional">ESO IV</td>
-        </tr>
+  <!-- ========================= -->
+  <!-- GRADE SEMANAL (HORÁRIOS) -->
+  <!-- ========================= -->
+  <h2>Grade de Horários | Horario 2025.2</h2>
 
-        <tr>
-          <td data-id="psi1" data-ch="60" data-subarea="formacao_docente">Psicologia I</td>
-          <td data-id="psi2" data-prereq="psi1" data-ch="60" data-subarea="formacao_docente">Psicologia II</td>
-          <td data-id="algoritmos" data-prereq="programacao1,discreta1" data-ch="60" data-subarea="Fundamentos_da_computacao">Algoritmos e Estru. De Dados</td>
-          <td data-id="bd" data-prereq="programacao1,programacao2,algoritmos" data-ch="60" data-subarea="Tecnologia_da_Computacao">Banco de Dados</td>
-          <td data-id="redes" data-ch="60" data-subarea="Tecnologia_da_Computacao">Redes de Computadores</td>
-          <td data-id="eso1" data-prereq="educ_brasileira,mec" data-ch="90" data-subarea="contexto_social_e_profissional">ESO I</td>
-          <td data-id="eso2" data-prereq="eso1" data-ch="90" data-subarea="contexto_social_e_profissional">ESO II</td>
-          <td data-id="libras" data-ch="60" data-subarea="contexto_social_e_profissional">Libras</td>
-          <td data-id="tcc" data-prereq="metodologia_c" data-ch="60" data-subarea="formacao_docente">TCC</td>
-        </tr>
+  <table class="tabela">
+    <thead>
+      <tr>
+        <th>Horário</th>
+        <th>Segunda</th>
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+        <th>Sábado</th>
+      </tr>
+    </thead>
 
-        <tr>
-          <td data-id="ProdTexto" data-ch="60" data-subarea="formacao_docente">Producao de Texto</td>
-          <td data-id="CalculoI" data-prereq="" data-ch="60" data-subarea="Matematica">Calculo I</td>
-          <td data-id="CalculoII" data-prereq="CalculoI" data-ch="60" data-subarea="Matematica">Calculo II</td>
-          <td data-id="Estatistica" data-prereq="CalculoI, CalculoII" data-ch="60" data-subarea="Matematica">Estatistica Exploratoria</td>
-          <td data-id="AlgebraLinear" data-prereq="" data-ch="60" data-subarea="Matematica">Algebra Linear</td>
-          <td data-id="TecnologianaEducacao" data-ch="60" data-subarea="contexto_social_e_profissional">Tecnologia na Educacao</td>
-          <td data-id="EducaçãodasRelaçõesÉtnicoRaciais" data-ch="60" data-subarea="formacao_docente">Educação das Relações Étnico-Raciais</td>
-          <td data-id="ProjetodeDesenvolvimentodeSoftwareEducacional" data-ch="60" data-prereq="engsoft, programacao2, pc" data-subarea="Tecnologia_da_Computacao">Projeto de Desenvolvimento de Software Educacional</td>
-          <td data-slot="optativa6" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 6</td>
-        </tr>
+    <tbody>
+      <tr>
+        <th>08:00 às 10:00</th>
+        <td data-slot="seg-08:00"></td>
+        <td data-slot="ter-08:00"></td>
+        <td data-slot="qua-08:00"></td>
+        <td data-slot="qui-08:00"></td>
+        <td data-slot="sex-08:00"></td>
+        <td data-slot="sab-08:00"></td>
+      </tr>
 
-        <tr>
-          <td data-id="discreta1" data-ch="60" data-subarea="Matematica">Discreta I</td>
-          <td data-id="discreta2" data-prereq="discreta1" data-ch="60" data-subarea="Matematica">Discreta II</td>
-          <td data-id="circuitos" data-ch="60" data-subarea="Fundamentos_da_computacao">Circuitos Digitais</td>
-          <td data-id="arquitetura" data-prereq="circuitos" data-ch="60" data-subarea="Fundamentos_da_computacao">Arquitetura Org. Computadores</td>
-          <td data-id="so" data-prereq="circuitos,algoritmos,arquitetura,programacao1,programacao2,discreta1,discreta2" data-ch="60" data-subarea="Tecnologia_da_Computacao">Sistemas Operacionais</td>
-          <td data-id="ihc" data-ch="60" data-subarea="Tecnologia_da_Computacao">Interação Homem-Maquina</td>
-          <td data-slot="optativa2" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 2</td>
-          <td data-slot="optativa4" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 4</td>
-        </tr>
+      <tr>
+        <th>10:00 às 12:00</th>
+        <td data-slot="seg-10:00"></td>
+        <td data-slot="ter-10:00"></td>
+        <td data-slot="qua-10:00"></td>
+        <td data-slot="qui-10:00"></td>
+        <td data-slot="sex-10:00"></td>
+        <td data-slot="sab-10:00"></td>
+      </tr>
 
+      <tr>
+        <th>18:30 às 20:10</th>
+        <td data-slot="seg-18:30"></td>
+        <td data-slot="ter-18:30"></td>
+        <td data-slot="qua-18:30"></td>
+        <td data-slot="qui-18:30"></td>
+        <td data-slot="sex-18:30"></td>
+        <td></td>
+      </tr>
 
-        <tr>
-          <td data-id="pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Pensamento Computacional</td>
-          <td data-id="programacao1" data-prereq="pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Prog I</td>
-          <td data-id="programacao2" data-prereq="programacao1, pc" data-ch="60" data-subarea="Fundamentos_da_computacao">Prog II</td>
-          <td data-id="tc" data-prereq="discreta1,discreta2" data-ch="60" data-subarea="Fundamentos_da_computacao">Teoria da computação</td>
-          <td data-id="engsoft" data-ch="60" data-subarea="Tecnologia_da_Computacao">Engenharia de Software</td>
-          <td data-id="ia" data-prereq="programacao2,pc" data-ch="60" data-subarea="Tecnologia_da_Computacao">Inteligencia Artificial</td>
-          <td data-slot="optativa3" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 3</td>
-          <td data-slot="optativa5" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 5</td>
-        </tr>
+      <tr>
+        <th>20:10 às 21:50</th>
+        <td data-slot="seg-20:10"></td>
+        <td data-slot="ter-20:10"></td>
+        <td data-slot="qua-20:10"></td>
+        <td data-slot="qui-20:10"></td>
+        <td data-slot="sex-20:10"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
-        <tr>
-          <td data-id="ava" data-ch="60" data-subarea="Fundamentos_da_computacao" data-modalidade="EAD">AVA</td>
-          <td data-id="lab1" data-prereq="programacao1" data-ch="60" data-subarea="Fundamentos_da_computacao" data-modalidade="EAD">Lab I</td>
-          <td data-id="lab2" data-prereq="programacao2" data-ch="60" data-subarea="Fundamentos_da_computacao" data-modalidade="EAD">Lab II</td>
-          <td data-id="ahsc" data-ch="60" data-subarea="contexto_social_e_profissional" data-modalidade="EAD">AHSC</td>
-          <td data-id="metodologia_c" data-ch="60" data-subarea="formacao_docente">Metodologia Científica</td>
-          <td data-slot="optativa1" class="optativa" data-ch="60" data-subarea="Optativas">Optativa 1</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
+</main>
 
-  <script src="horarios.js"></script>
-
+<script src="horarios.js"></script>
 </body>
 </html>

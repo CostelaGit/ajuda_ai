@@ -1,254 +1,142 @@
-body {
+/* =========================
+   RESET BÁSICO
+========================= */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
+  box-sizing: border-box;
 }
 
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "grade progresso"
-    "optativas progresso";
-  gap: 20px;
-  padding: 20px;
-  max-width: 1400px;
-  margin: 0 auto;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
 }
 
-.grade-area {
-  grid-area: grade;
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.optativas-area {
-  grid-area: optativas;
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.progresso-area {
-  grid-area: progresso;
-  background: #fff;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-
-
-
-
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-}
-
-.tabela th,
-.tabela td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-}
-
-.tabela thead {
-    background-color: #2c3e50;
-    color: white;
-}
-
-.tabela tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.tabela tbody tr:hover {
-    background-color: #e0e0e0;
-}
-
-
-.tabela td {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.aprovado {
-  color: #fff;
-  font-weight: 600;
-}
-
-td[data-subarea="formacao_docente"].aprovado {
-  background-color: #ffd688;
-}
-
-td[data-subarea="contexto_social_e_profissional"].aprovado {
-  background-color: #f6b59a;
-}
-
-td[data-subarea="Matematica"].aprovado {
-  background-color: #b1d2a1;
-}
-
-td[data-subarea="Fundamentos_da_computacao"].aprovado {
-  background-color: #a2b2dd;
-}
-
-td[data-subarea="Tecnologia_da_Computacao"].aprovado {
-  background-color:#aac6e7;
-}
-
-td[data-subarea="Optativas"].aprovado {
-  background-color:#525252;
-}
-
-.reprovado {
-    background-color: #e74c3c;
-    color: #fff;
-}
-
-.bloqueada {
-    background-color: #bdc3c7;
-    color: #666;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.ppc-download {
-  margin-top: 20px;
-  padding-top: 12px;
-  border-top: 1px solid #ddd;
-  text-align: center;
-}
-
-.ppc-download a {
-  display: inline-block;
-  font-size: 0.9rem;
-  color: #2c3e50;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.2s ease;
-}
-
-.ppc-download a:hover {
-  background: #f0f2f5;
-  text-decoration: underline;
-}
-
-.ac-lista {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  font-size: 0.85rem;
-}
-
-.ac-lista li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f6f7f9;
-  padding: 6px 8px;
-  margin-bottom: 6px;
-  border-radius: 6px;
-}
-
-.ac-lista span {
-  flex: 1;
-}
-
-.ac-lista button {
-  background: none;
-  border: none;
-  color: #c0392b;
-  cursor: pointer;
-  font-size: 0.8rem;
-}
-
-.ac-lista button:hover {
-  text-decoration: underline;
-}
-
-
-.exportacao progress {
-  display: none;
-}
-
-.exportacao .barra {
-  margin-bottom: 14px;
-}
-
-.exportacao .barra .barra-fake {
-  height: 14px;
-  background: #2c3e50;
-  border-radius: 6px;
-  margin-top: 6px;
-}
-
-.exportacao .ppc-download {
-  display: none;
-}
-
-#exportar-pdf {
-  display: block;
-  margin: 16px auto 0 auto;
-}
-
-.exportacao-pdf section {
-  margin-bottom: 24px;
-  page-break-inside: avoid;
-}
-
-.exportacao-pdf .progresso-area {
-  page-break-before: always;
-}
-
-td[data-modalidade]::after {
-  content: attr(data-modalidade);
-  display: block;
-  font-size: 0.7rem;
-  color: #666;
-  margin-top: 2px;
-}
-
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
+  background-color: #0b4f6c;
+  padding: 12px 24px;
   display: flex;
-  justify-content: center;
   gap: 20px;
-  background: #2c3e50;
-  padding: 12px;
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .navbar a:hover {
   text-decoration: underline;
 }
 
-
-.tooltip {
-  position: absolute;
-  background: #2c3e50;
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-  z-index: 1000;
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+.grade-area {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
-.tooltip.visible {
-  opacity: 1;
+.grade-area h2 {
+  margin: 20px 0 10px;
+  color: #0b4f6c;
+}
+
+/* =========================
+   TABELAS
+========================= */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: #fff;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Cabeçalho */
+.tabela thead th {
+  background-color: #0b4f6c;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =========================
+   LISTA DE DISCIPLINAS
+========================= */
+.tabela td[data-id] {
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Hover apenas se não bloqueada */
+.tabela td[data-id]:not(.bloqueada):hover {
+  background-color: #e3f2fd;
+}
+
+/* Disciplina selecionada */
+.tabela td.selecionada {
+  background-color: #2e7d32;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Disciplina bloqueada por conflito */
+.tabela td.bloqueada {
+  background-color: #eee;
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================
+   GRADE DE HORÁRIOS
+========================= */
+.tabela td[data-slot] {
+  height: 60px;
+  font-size: 0.9rem;
+  background-color: #fafafa;
+}
+
+/* Aula preenchida */
+.tabela td[data-slot]:not(:empty) {
+  background-color: #bbdefb;
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+/* =========================
+   EAD
+========================= */
+td[data-modalidade="EAD"] {
+  border-left: 5px solid #6a1b9a;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .tabela th,
+  .tabela td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .tabela td[data-slot] {
+    height: 50px;
+  }
 }
