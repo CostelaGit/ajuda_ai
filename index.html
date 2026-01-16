@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <title>Grade Curricular</title>
@@ -9,15 +10,71 @@
 <body>
 
 <nav class="navbar">
-    <a href="curso.html">Curso</a>
+  <a href="curso.html">Curso</a>
   <a href="index.html">Grade/Progresso do Curso</a>
-    <a href="horarios.html">Simulação de horarios</a>
+  <a href="horarios.html">Simulação de horarios</a>
   <a href="sobre.html">Sobre</a>
 </nav>
 
 
 <div class="layout">
 
+    <!-- OPTATIVAS -->
+  <section class="optativas-area" id="painel-optativas">
+    <h3>Optativas</h3>
+    
+    <select id="area-optativa">
+      <option value="">Selecione a área</option>
+      <option value="computacao_educacional">Computação Educacional</option>
+      <option value="engenharia_software">Engenharia de Software</option>
+      <option value="fundamentos_computacionais">Fundamentos Computacionais</option>
+      <option value="inteligencia_artificial">Inteligência Artificial</option>
+      <option value="Interface_RealidadeVirtual"> Interface e Realidade Virtual</option>
+      <option value="Infraestrutura_De_Hardware">Infra-estrutura de Hardware</option>
+      <option value="Infraestrutura_De_Software">Infra-estrutura de Software</option>
+    </select>
+
+    <select id="disciplina-optativa"></select>
+    <select id="slot-optativa"></select>
+    <button id="aplicar-optativa">Aplicar</button>
+
+    <hr>
+
+<h3>Atividades Complementares</h3>
+
+<div class="atividades-form">
+  <input
+    type="text"
+    id="ac-nome"
+    placeholder="Nome do curso ou projeto"
+  >
+
+  <select id="ac-categoria">
+    <option value="">Categoria</option>
+    <option value="pesquisa">Pesquisa</option>
+    <option value="extensao">Extensão</option>
+    <option value="ensino">Ensino</option>
+  </select>
+
+  <input
+    type="number"
+    id="ac-horas"
+    placeholder="Horas"
+    min="1"
+  >
+
+  <button id="ac-adicionar">Adicionar</button>
+</div>
+
+<p>
+  Total de horas em Atividades Complementares:
+  <strong><span id="ac-total">0</span>h</strong>
+  <ul id="ac-lista" class="ac-lista"  ></ul>
+</p>
+
+
+  </section>
+<div class="bloco-academico">
   <!-- ÁREA CENTRAL: GRADE -->
   <main class="grade-area">
     <h2>Grade Curricular</h2>
@@ -102,62 +159,6 @@
     </table>
   </main>
 
-  <!-- OPTATIVAS -->
-  <section class="optativas-area" id="painel-optativas">
-    <h3>Optativas</h3>
-    
-    <select id="area-optativa">
-      <option value="">Selecione a área</option>
-      <option value="computacao_educacional">Computação Educacional</option>
-      <option value="engenharia_software">Engenharia de Software</option>
-      <option value="fundamentos_computacionais">Fundamentos Computacionais</option>
-      <option value="inteligencia_artificial">Inteligência Artificial</option>
-      <option value="Interface_RealidadeVirtual"> Interface e Realidade Virtual</option>
-      <option value="Infraestrutura_De_Hardware">Infra-estrutura de Hardware</option>
-      <option value="Infraestrutura_De_Software">Infra-estrutura de Software</option>
-    </select>
-
-    <select id="disciplina-optativa"></select>
-    <select id="slot-optativa"></select>
-    <button id="aplicar-optativa">Aplicar</button>
-
-    <hr>
-
-<h3>Atividades Complementares</h3>
-
-<div class="atividades-form">
-  <input
-    type="text"
-    id="ac-nome"
-    placeholder="Nome do curso ou projeto"
-  >
-
-  <select id="ac-categoria">
-    <option value="">Categoria</option>
-    <option value="pesquisa">Pesquisa</option>
-    <option value="extensao">Extensão</option>
-    <option value="ensino">Ensino</option>
-  </select>
-
-  <input
-    type="number"
-    id="ac-horas"
-    placeholder="Horas"
-    min="1"
-  >
-
-  <button id="ac-adicionar">Adicionar</button>
-</div>
-
-<p>
-  Total de horas em Atividades Complementares:
-  <strong><span id="ac-total">0</span>h</strong>
-  <ul id="ac-lista" class="ac-lista"  ></ul>
-</p>
-
-
-  </section>
-
   <!-- PROGRESSO -->
   <aside class="progresso-area" id="progresso-curso">
     <h3>Progresso</h3>
@@ -207,13 +208,14 @@
 
 
   </aside>
-
+</div>
   
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="scripts22.js"></script>
-</body>
-</html>
 
+</body>
+
+</html>

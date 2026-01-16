@@ -276,3 +276,69 @@ td[data-modalidade]::after {
 .navbar a:hover {
   text-decoration: underline;
 }
+
+.bloco-academico {
+  display: contents; /* no desktop ignora o wrapper */
+}
+
+/* =========================================================
+   13. MOBILE — GRADE + PROGRESSO COM SCROLL HORIZONTAL
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* quebra o grid do desktop */
+  .layout {
+    display: block;
+    padding: 12px;
+  }
+
+  /* wrapper lógico entre grade e progresso */
+  .bloco-academico {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+
+    /* scroll suave no mobile */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* impede esmagamento */
+  .grade-area {
+    min-width: 720px; /* largura mínima da tabela */
+    flex-shrink: 0;
+  }
+
+  .progresso-area {
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  /* dica visual discreta */
+  .bloco-academico::after {
+    content: "↔ deslize para ver progresso";
+    position: sticky;
+    right: 8px;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: linear-gradient(to right, transparent, var(--bg-page));
+    padding-left: 12px;
+  }
+
+  /* optativas seguem fluxo normal */
+  .optativas-area {
+    margin-top: 12px;
+  }
+
+  /* navbar quebra melhor */
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
