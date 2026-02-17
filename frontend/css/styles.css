@@ -1,0 +1,344 @@
+/* =========================================================
+   1. VARIÁVEIS GLOBAIS
+   ========================================================= */
+:root {
+  --bg-page: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-header: #2c3e50;
+
+  --text-light: #ffffff;
+  --text-muted: #666666;
+
+  --border-default: #cccccc;
+  --border-soft: #dddddd;
+
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+
+  --danger: #e74c3c;
+  --disabled: #bdc3c7;
+}
+
+/* =========================================================
+   2. RESET BÁSICO
+   ========================================================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-page);
+}
+
+/* =========================================================
+   3. LAYOUT PRINCIPAL
+   ========================================================= */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "grade progresso"
+    "optativas progresso";
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   4. ÁREAS / CARDS
+   ========================================================= */
+.grade-area,
+.optativas-area,
+.progresso-area {
+  background: var(--bg-card);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.grade-area {
+  grid-area: grade;
+}
+
+.optativas-area {
+  grid-area: optativas;
+}
+
+.progresso-area {
+  grid-area: progresso;
+}
+
+/* =========================================================
+   5. TABELA
+   ========================================================= */
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela th,
+.tabela td {
+  border: 1px solid var(--border-default);
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela thead {
+  background: var(--bg-header);
+  color: var(--text-light);
+}
+
+.tabela tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+.tabela tbody tr:hover {
+  background: #e0e0e0;
+}
+
+.tabela td {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* =========================================================
+   6. ESTADOS DE DISCIPLINA
+   ========================================================= */
+.aprovado {
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.reprovado {
+  background: var(--danger);
+  color: var(--text-light);
+}
+
+.bloqueada {
+  background: var(--disabled);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =========================================================
+   7. CORES POR SUBÁREA
+   ========================================================= */
+td[data-subarea="formacao_docente"].aprovado {
+  background: #ffd688;
+}
+
+td[data-subarea="contexto_social_e_profissional"].aprovado {
+  background: #f6b59a;
+}
+
+td[data-subarea="Matematica"].aprovado {
+  background: #b1d2a1;
+}
+
+td[data-subarea="Fundamentos_da_computacao"].aprovado {
+  background: #a2b2dd;
+}
+
+td[data-subarea="Tecnologia_da_Computacao"].aprovado {
+  background: #aac6e7;
+}
+
+td[data-subarea="Optativas"].aprovado {
+  background: #525252;
+}
+
+/* =========================================================
+   8. MODALIDADE (SUBTEXTO)
+   ========================================================= */
+td[data-modalidade]::after {
+  content: attr(data-modalidade);
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* =========================================================
+   9. LISTA DE ATIVIDADES COMPLEMENTARES
+   ========================================================= */
+.ac-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.ac-lista li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f7f9;
+  padding: 6px 8px;
+  margin-bottom: 6px;
+  border-radius: var(--radius-sm);
+}
+
+.ac-lista span {
+  flex: 1;
+}
+
+.ac-lista button {
+  background: none;
+  border: none;
+  color: #c0392b;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.ac-lista button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   10. EXPORTAÇÃO / PDF
+   ========================================================= */
+.exportacao progress,
+.exportacao .ppc-download {
+  display: none;
+}
+
+.exportacao .barra {
+  margin-bottom: 14px;
+}
+
+.exportacao .barra-fake {
+  height: 14px;
+  background: var(--bg-header);
+  border-radius: var(--radius-sm);
+  margin-top: 6px;
+}
+
+#exportar-pdf {
+  display: block;
+  margin: 16px auto 0;
+}
+
+.exportacao-pdf section {
+  margin-bottom: 24px;
+  page-break-inside: avoid;
+}
+
+.exportacao-pdf .progresso-area {
+  page-break-before: always;
+}
+
+/* =========================================================
+   11. PPC DOWNLOAD
+   ========================================================= */
+.ppc-download {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+  text-align: center;
+}
+
+.ppc-download a {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--bg-header);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  transition: background 0.2s ease;
+}
+
+.ppc-download a:hover {
+  background: #f0f2f5;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   12. NAVBAR
+   ========================================================= */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: var(--bg-header);
+  padding: 12px;
+}
+
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.bloco-academico {
+  display: contents; /* no desktop ignora o wrapper */
+}
+
+/* =========================================================
+   13. MOBILE — GRADE + PROGRESSO COM SCROLL HORIZONTAL
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* quebra o grid do desktop */
+  .layout {
+    display: block;
+    padding: 12px;
+  }
+
+  /* wrapper lógico entre grade e progresso */
+  .bloco-academico {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+
+    /* scroll suave no mobile */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* impede esmagamento */
+  .grade-area {
+    min-width: 720px; /* largura mínima da tabela */
+    flex-shrink: 0;
+  }
+
+  .progresso-area {
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  /* dica visual discreta */
+  .bloco-academico::after {
+    content: "↔ deslize para ver progresso";
+    position: sticky;
+    right: 8px;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    background: linear-gradient(to right, transparent, var(--bg-page));
+    padding-left: 12px;
+  }
+
+  /* optativas seguem fluxo normal */
+  .optativas-area {
+    margin-top: 12px;
+  }
+
+  /* navbar quebra melhor */
+  .navbar {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
