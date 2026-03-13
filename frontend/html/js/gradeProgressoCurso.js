@@ -330,6 +330,56 @@ const Estado = {
 };
 
 /**************************************************
+ * 8. MODAL BOX
+ **************************************************/
+const Modal = {
+  element: document.getElementById('modal'),
+  title: document.getElementById('modal-title'),
+  info: document.getElementById('modal-info'),
+  closeBtn: document.querySelector('.close'),
+
+  show(disciplina) {
+    this.title.textContent = disciplina.textContent.trim();
+    this.info.innerHTML = `
+      <p><strong>ID:</strong> ${disciplina.dataset.id}</p>
+      <p><strong>Carga Horária:</strong> ${disciplina.dataset.ch}h</p>
+      <p><strong>Pré-requisitos:</strong> ${disciplina.dataset.prereq ? disciplina.dataset.prereq.split(',').join(', ') : 'Nenhum'}</p>
+      <p><strong>Subárea:</strong> ${disciplina.dataset.subarea.replace(/_/g, ' ')}</p>
+      ${disciplina.dataset.modalidade ? `<p><strong>Modalidade:</strong> ${disciplina.dataset.modalidade}</p>` : ''}
+      <p><button id="modal-marcar-concluida" data-id="${disciplina.dataset.id}">Marcar como Concluída</button></p>
+    `;
+    this.element.style.display = 'block';
+
+    // Adicionar listener ao botão
+    document.getElementById('modal-marcar-concluida').addEventListener('click', () => {
+      const id = document.getElementById('modal-marcar-concluida').dataset.id;
+      const td = document.querySelector(`td[data-id="${id}"]`);
+      if (td) {
+        td.classList.remove("reprovado", "bloqueada");
+        td.classList.add("aprovado");
+        Grade.atualizarBloqueios();
+        Progresso.calcular();
+        this.hide();
+      }
+    });
+  },
+
+  hide() {
+    this.element.style.display = 'none';
+  }
+};
+
+// Fechar modal ao clicar no X
+Modal.closeBtn.addEventListener('click', () => Modal.hide());
+
+// Fechar modal ao clicar fora
+window.addEventListener('click', (e) => {
+  if (e.target === Modal.element) {
+    Modal.hide();
+  }
+});
+
+/**************************************************
  * 6. EVENTOS
  **************************************************/
 document.addEventListener("DOMContentLoaded", () => {
@@ -370,6 +420,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   document.getElementById('salvar-estado').addEventListener('click', Estado.salvar);
+
+  // Adicionar ícones [i] às disciplinas
+  document.querySelectorAll('.tabela td[data-id]').forEach(td => {
+    const infoIcon = document.createElement('span');
+    infoIcon.textContent = '[i]';
+    infoIcon.className = 'info-icon';
+    infoIcon.addEventListener('click', (e) => {
+      e.stopPropagation(); // Impede que o clique no td seja acionado
+      Modal.show(td);
+    });
+    td.appendChild(infoIcon);
+  });
 
   Estado.carregar();
   Grade.atualizarBloqueios();
