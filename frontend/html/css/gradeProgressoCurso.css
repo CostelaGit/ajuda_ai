@@ -105,6 +105,24 @@ body {
 }
 
 /* =========================================================
+   5.5. BOTÃO SALVAR ESTADO
+   ========================================================= */
+#salvar-estado {
+  background: var(--bg-header);
+  color: var(--text-light);
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+#salvar-estado:hover {
+  background: #34495e;
+}
+
+/* =========================================================
    6. ESTADOS DE DISCIPLINA
    ========================================================= */
 .aprovado {

@@ -261,6 +261,75 @@ const Progresso = {
 };
 
 /**************************************************
+ * 7. SALVAR/CARREGAR ESTADO
+ **************************************************/
+const Estado = {
+
+  salvar() {
+    const estado = {
+      disciplinas: {},
+      optativas: {},
+      atividades: AtividadesComplementares.lista
+    };
+
+    // Salvar disciplinas
+    document.querySelectorAll('.tabela td[data-id]').forEach(td => {
+      if (td.classList.contains('aprovado')) {
+        estado.disciplinas[td.dataset.id] = 'aprovado';
+      } else if (td.classList.contains('reprovado')) {
+        estado.disciplinas[td.dataset.id] = 'reprovado';
+      }
+    });
+
+    // Salvar optativas aplicadas
+    document.querySelectorAll('.tabela td.optativa[data-id]').forEach(td => {
+      estado.optativas[td.dataset.slot] = {
+        id: td.dataset.id,
+        nome: td.textContent,
+        prereq: td.dataset.prereq
+      };
+    });
+
+    localStorage.setItem('gradeEstado', JSON.stringify(estado));
+    alert('Estado salvo!');
+  },
+
+  carregar() {
+    const estado = JSON.parse(localStorage.getItem('gradeEstado'));
+    if (!estado) return;
+
+    // Carregar disciplinas
+    Object.keys(estado.disciplinas).forEach(id => {
+      const td = document.querySelector(`td[data-id="${id}"]`);
+      if (td) {
+        td.classList.remove('aprovado', 'reprovado');
+        td.classList.add(estado.disciplinas[id]);
+      }
+    });
+
+    // Carregar optativas
+    Object.keys(estado.optativas).forEach(slot => {
+      const opt = estado.optativas[slot];
+      const td = document.querySelector(`td[data-slot="${slot}"]`);
+      if (td) {
+        td.dataset.id = opt.id;
+        td.dataset.prereq = opt.prereq;
+        td.textContent = opt.nome;
+        td.classList.add('optativa');
+      }
+    });
+
+    // Carregar atividades
+    AtividadesComplementares.lista = estado.atividades || [];
+    AtividadesComplementares.recalcular();
+    AtividadesComplementares.renderizar();
+
+    Grade.atualizarBloqueios();
+    Progresso.calcular();
+  }
+};
+
+/**************************************************
  * 6. EVENTOS
  **************************************************/
 document.addEventListener("DOMContentLoaded", () => {
@@ -300,7 +369,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("ac-horas").value = "";
 });
 
+  document.getElementById('salvar-estado').addEventListener('click', Estado.salvar);
 
+  Estado.carregar();
   Grade.atualizarBloqueios();
   Progresso.calcular();
 });
