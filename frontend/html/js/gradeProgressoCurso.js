@@ -85,12 +85,16 @@ const Grade = {
   atualizarBloqueios() {
     document.querySelectorAll("td[data-id]").forEach(td => {
       const prereqs = td.dataset.prereq?.split(",").filter(Boolean) || [];
-      const liberada = prereqs.every(p => this.isAprovada(p.trim()));
+      const forcado = td.classList.contains("forcado");
+      const liberada = forcado || prereqs.every(p => this.isAprovada(p.trim()));
 
       td.classList.toggle("bloqueada", !liberada);
 
       if (!liberada) {
         td.classList.remove("aprovado", "reprovado");
+      } else if (forcado) {
+        // Mantém aprovado mesmo que os pré-requisitos não estejam todos cumpridos
+        td.classList.remove("bloqueada");
       }
     });
   },
@@ -99,12 +103,12 @@ const Grade = {
     if (td.classList.contains("bloqueada")) return;
 
     if (evento === "click") {
-      td.classList.remove("reprovado");
+      td.classList.remove("reprovado", "forcado");
       td.classList.toggle("aprovado");
     }
 
     if (evento === "dblclick") {
-      td.classList.remove("aprovado");
+      td.classList.remove("aprovado", "forcado");
       td.classList.toggle("reprovado");
     }
 
@@ -356,7 +360,7 @@ const Modal = {
       const td = document.querySelector(`td[data-id="${id}"]`);
       if (td) {
         td.classList.remove("reprovado", "bloqueada");
-        td.classList.add("aprovado");
+        td.classList.add("aprovado", "forcado");
         Grade.atualizarBloqueios();
         Progresso.calcular();
         this.hide();
