@@ -384,6 +384,30 @@ window.addEventListener('click', (e) => {
 });
 
 /**************************************************
+ * MODAL IMAGEM
+ **************************************************/
+const ModalImagem = {
+  element: document.getElementById('modal-imagem'),
+  closeBtns: document.querySelectorAll('#modal-imagem .close'),
+  show() {
+    this.element.style.display = 'block';
+  },
+  hide() {
+    this.element.style.display = 'none';
+  }
+};
+
+ModalImagem.closeBtns.forEach(btn => {
+  btn.addEventListener('click', () => ModalImagem.hide());
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === ModalImagem.element) {
+    ModalImagem.hide();
+  }
+});
+
+/**************************************************
  * 6. EVENTOS
  **************************************************/
 document.addEventListener("DOMContentLoaded", () => {
@@ -424,6 +448,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   document.getElementById('salvar-estado').addEventListener('click', Estado.salvar);
+
+  document.getElementById('abrir-modal-imagem').addEventListener('click', () => {
+    ModalImagem.show();
+  });
 
   // Adicionar ícones [i] às disciplinas
   document.querySelectorAll('.tabela td[data-id]').forEach(td => {

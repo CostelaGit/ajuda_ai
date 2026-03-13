@@ -240,6 +240,10 @@ td[data-modalidade]::after {
   margin: 16px auto 0;
 }
 
+#abrir-modal-imagem {
+  display: block;
+  margin: 16px auto 0;
+}
 .exportacao-pdf section {
   margin-bottom: 24px;
   page-break-inside: avoid;
@@ -378,15 +382,24 @@ td[data-modalidade]::after {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
-  max-width: 500px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow: auto;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
 }
 
+.modal-img-container img {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  display: block;
+  margin: 0 auto;
+}
 .close {
   color: #aaa;
   float: right;
