@@ -69,13 +69,48 @@ body {
 /**************************************************
  * 5. CONTAINER PRINCIPAL
  **************************************************/
-.container {
-  max-width: 900px;
+.content-wrapper {
+  max-width: 1200px;
   margin: 40px auto;
+  display: flex;
+  gap: 20px;
+}
 
+.main-content {
+  flex: 1;
   background-color: #ffffff;
   padding: 30px;
   border-radius: 6px;
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.sidebar h3 {
+  color: #1f4f3a;
+  margin-bottom: 15px;
+}
+
+.link-container {
+  margin-bottom: 10px;
+}
+
+.link-container a {
+  display: block;
+  padding: 10px;
+  background-color: #f4f6f8;
+  color: #333333;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.link-container a:hover {
+  background-color: #e0e0e0;
 }
 
 
