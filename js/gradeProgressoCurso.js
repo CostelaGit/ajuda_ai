@@ -3,62 +3,109 @@
  **************************************************/
 const OPTATIVAS = {
   computacao_educacional: [
-    { id: "Design_Instrucional", nome: "Design Instrucional", prereq: [""] },
-    { id: "Inovacao_Em_Educacao", nome: "Inovação em Educação", prereq: [""] },
-    { id: "Jogos_Digitais_na_Educacao", nome: "Jogos Digitais na Educação", prereq: [""] },
-    { id: "Mineracao_de_Dados_Educacionais", nome: "Mineração de Dados Educacionais", prereq: ["Estatistica", "CalculoI", "CalculoII"] },
-    { id: "Projetos_de_Sistemas_Educacionais", nome: "Projetos de Sistemas Educacionais", prereq: ["TecnologianaEducacao"] },
-    { id: "Topicos_Avançados_de_Educacao_em_Computacao", nome: "Tópicos Avançados de Educação em Computação", prereq: ["programacao2", "programacao1"] },
-    { id: "Prática_de_Ensino_de_Algoritmos", nome: "Prática de Ensino de Algoritmos", prereq: [""] },
-    { id: "Prática_de_Ensino_de_Logico", nome: "Prática de Ensino de Lógica", prereq: [""] },
-    { id: "Prática_de_Ensino_de_Redes_e_Sistemas_Internet", nome: "Prática de Ensino de Redes e Sistemas Internet", prereq: [""] },
-    { id: "Prática_de_Ensino_de_Interfaces_Homem-Maquina", nome: "Prática de Ensino de Interfaces Homem-Maquina", prereq: [""] },
-    { id: "Prática_de_Ensino_de_Computabilidade", nome: "Prática de Ensino de Computabilidade", prereq: [""] },
-    { id: "Topicos_Avançados_em_Educacao_a_Distancia", nome: "Tópicos Avançados de Educação a Distância", prereq: ["ead", "redes", "programacao1", "programacao2"] },
+    { id: "Design_Instrucional", nome: "Design Instrucional", prereq: [""], subjects: ["Design Instrucional Básico"], professors: ["Prof. Silva"] },
+    { id: "Inovacao_Em_Educacao", nome: "Inovação em Educação", prereq: [""], subjects: ["Inovação Pedagógica"], professors: ["Prof. Santos"] },
+    { id: "Jogos_Digitais_na_Educacao", nome: "Jogos Digitais na Educação", prereq: [""], subjects: ["Gamificação"], professors: ["Prof. Oliveira"] },
+    { id: "Mineracao_de_Dados_Educacionais", nome: "Mineração de Dados Educacionais", prereq: ["Estatistica", "CalculoI", "CalculoII"], subjects: ["Data Mining"], professors: ["Prof. Pereira"] },
+    { id: "Projetos_de_Sistemas_Educacionais", nome: "Projetos de Sistemas Educacionais", prereq: ["TecnologianaEducacao"], subjects: ["Prototipagem"], professors: ["Prof. Costa"] },
+    { id: "Topicos_Avançados_de_Educacao_em_Computacao", nome: "Tópicos Avançados de Educação em Computação", prereq: ["programacao2", "programacao1"], subjects: ["Educação Computacional Avançada"], professors: ["Prof. Lima"] },
+    { id: "Prática_de_Ensino_de_Algoritmos", nome: "Prática de Ensino de Algoritmos", prereq: [""], subjects: ["Ensino de Algoritmos"], professors: ["Prof. Ferreira"] },
+    { id: "Prática_de_Ensino_de_Logico", nome: "Prática de Ensino de Lógica", prereq: [""], subjects: ["Lógica Computacional"], professors: ["Prof. Rodrigues"] },
+    { id: "Prática_de_Ensino_de_Redes_e_Sistemas_Internet", nome: "Prática de Ensino de Redes e Sistemas Internet", prereq: [""], subjects: ["Redes de Computadores"], professors: ["Prof. Almeida"] },
+    { id: "Prática_de_Ensino_de_Interfaces_Homem-Maquina", nome: "Prática de Ensino de Interfaces Homem-Maquina", prereq: [""], subjects: ["IHM"], professors: ["Prof. Gomes"] },
+    { id: "Prática_de_Ensino_de_Computabilidade", nome: "Prática de Ensino de Computabilidade", prereq: [""], subjects: ["Teoria da Computação"], professors: ["Prof. Carvalho"] },
+    { id: "Topicos_Avançados_em_Educacao_a_Distancia", nome: "Tópicos Avançados de Educação a Distância", prereq: ["ead", "redes", "programacao1", "programacao2"], subjects: ["EAD Avançada"], professors: ["Prof. Martins"] },
   ],
   engenharia_software: [
-    { id: "Análise_e_Projeto_de_Sistemas_Orientados_a_Objeto", nome: "Análise e Projeto de Sistemas Orientados a Objeto", prereq: ["engsoft", "programacao2", "pc"] },
-    { id: "gerencia_projetos", nome: "Gerência de Projetos", prereq: ["engsoft"] },
-    { id: "Computacao_Empreendedorismo", nome: "Computação e Empreendedorismo", prereq: ["programacao1", "pc"] },
-    { id: "Engenharia_de_Requisitos", nome: "Engenharia de Requisitos", prereq: ["engsoft"] },
-    { id: "Gestao_da_Informacao_e_do_Conhecimento", nome: "Gestão da Informação e do Conhecimento", prereq: ["engsoft"] },
-    { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"] },
-    { id: "Governanca_de_TI", nome: "Governança de TI", prereq: ["engsoft"] },
-    { id: "Inovacao_em_projetos_de_software", nome: "Inovação em Projetos de Software", prereq: ["engsoft"] },
+    { id: "Análise_e_Projeto_de_Sistemas_Orientados_a_Objeto", nome: "Análise e Projeto de Sistemas Orientados a Objeto", prereq: ["engsoft", "programacao2", "pc"], subjects: ["OOAD"], professors: ["Prof. Souza"] },
+    { id: "gerencia_projetos", nome: "Gerência de Projetos", prereq: ["engsoft"], subjects: ["PMBOK"], professors: ["Prof. Ribeiro"] },
+    { id: "Computacao_Empreendedorismo", nome: "Computação e Empreendedorismo", prereq: ["programacao1", "pc"], subjects: ["Empreendedorismo"], professors: ["Prof. Teixeira"] },
+    { id: "Engenharia_de_Requisitos", nome: "Engenharia de Requisitos", prereq: ["engsoft"], subjects: ["Requisitos"], professors: ["Prof. Nunes"] },
+    { id: "Gestao_da_Informacao_e_do_Conhecimento", nome: "Gestão da Informação e do Conhecimento", prereq: ["engsoft"], subjects: ["KM"], professors: ["Prof. Mendes"] },
+    { id: "Gestao_de_processos_de_negocio", nome: "Gestão de Processos de Negocio", prereq: ["engsoft"], subjects: ["BPM"], professors: ["Prof. Barbosa"] },
+    { id: "Governanca_de_TI", nome: "Governança de TI", prereq: ["engsoft"], subjects: ["IT Governance"], professors: ["Prof. Dias"] },
+    { id: "Inovacao_em_projetos_de_software", nome: "Inovação em Projetos de Software", prereq: ["engsoft"], subjects: ["Inovação"], professors: ["Prof. Pinto"] },
   ],
   fundamentos_computacionais: [
-    { id: "algoritmos_grafos", nome: "Algoritmos em Grafos", prereq: ["algoritmos", "programacao1", "discreta1"] },
-    { id: "Fisica_para_Computacao", nome: "Física para Computação", prereq: ["CalculoI", "CalculoII"] },
-    { id: "Paradigmas_de_Programacao", nome: "Paradigmas de Programação", prereq: ["programacao2", "pc"] },
-    { id: "Logica_e_Programacao_Logica", nome: "Lógica e Programação Lógica", prereq: ["programacao1", "pc"] }
+    { id: "algoritmos_grafos", nome: "Algoritmos em Grafos", prereq: ["algoritmos", "programacao1", "discreta1"], subjects: ["Grafos"], professors: ["Prof. Correia"] },
+    { id: "Fisica_para_Computacao", nome: "Física para Computação", prereq: ["CalculoI", "CalculoII"], subjects: ["Física"], professors: ["Prof. Monteiro"] },
+    { id: "Paradigmas_de_Programacao", nome: "Paradigmas de Programação", prereq: ["programacao2", "pc"], subjects: ["Paradigmas"], professors: ["Prof. Lopes"] },
+    { id: "Logica_e_Programacao_Logica", nome: "Lógica e Programação Lógica", prereq: ["programacao1", "pc"], subjects: ["Lógica"], professors: ["Prof. Fernandes"] }
   ],
   inteligencia_artificial: [
-    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "pc"] },
-    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica", "pc"] },
-    { id: "Sistemas_Multiagentes", nome: "Sistemas Multiagentes", prereq: ["ia", "programacao2", "pc"] },
-    { id: "Biologia_Computacional", nome: "Biologia Computacional", prereq: ["algoritmos"] },
-    { id: "Topicos_Avançados_em_Inteligencia_Artificial", nome: "Tópicos Avançados em Inteligência Artificial", prereq: ["ia", "programacao2", "programacao1"] },
+    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "pc"], subjects: ["ML"], professors: ["Prof. Araujo"] },
+    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica", "pc"], subjects: ["NN"], professors: ["Prof. Castro"] },
+    { id: "Sistemas_Multiagentes", nome: "Sistemas Multiagentes", prereq: ["ia", "programacao2", "pc"], subjects: ["Multiagent"], professors: ["Prof. Moreira"] },
+    { id: "Biologia_Computacional", nome: "Biologia Computacional", prereq: ["algoritmos"], subjects: ["Bioinfo"], professors: ["Prof. Cardoso"] },
+    { id: "Topicos_Avançados_em_Inteligencia_Artificial", nome: "Tópicos Avançados em Inteligência Artificial", prereq: ["ia", "programacao2", "programacao1"], subjects: ["AI Advanced"], professors: ["Prof. Silva"] },
 
   ],
   Interface_RealidadeVirtual: [
-    { id: "Computacao_Grafica_Basica", nome: "Computação Gráfica Básica", prereq: ["AlgebraLinear", "pc", "programacao1"] },
-    { id: "Processamento_de_Imagens", nome: "Processamento de Imagens", prereq: ["programacao1", "pc"] },
-    { id: "Realidade_Virtual", nome: "Realidade Virtual", prereq: ["AlgebraLinear", "programacao1", "pc"] },
-    { id: "Visao_computacional", nome: "Visão Computacional", prereq: ["AlgebraLinear", "programacao1", "pc"] },
-    { id: "Jogos_Digitais", nome: "Jogos Digitais", prereq: ["algoritmos", "programacao2", "programacao1", "discreta1", "pc"] },
+    { id: "Computacao_Grafica_Basica", nome: "Computação Gráfica Básica", prereq: ["AlgebraLinear", "pc", "programacao1"], subjects: ["CG"], professors: ["Prof. Santos"] },
+    { id: "Processamento_de_Imagens", nome: "Processamento de Imagens", prereq: ["programacao1", "pc"], subjects: ["Image Processing"], professors: ["Prof. Oliveira"] },
+    { id: "Realidade_Virtual", nome: "Realidade Virtual", prereq: ["AlgebraLinear", "programacao1", "pc"], subjects: ["VR"], professors: ["Prof. Pereira"] },
+    { id: "Visao_computacional", nome: "Visão Computacional", prereq: ["AlgebraLinear", "programacao1", "pc"], subjects: ["CV"], professors: ["Prof. Costa"] },
+    { id: "Jogos_Digitais", nome: "Jogos Digitais", prereq: ["algoritmos", "programacao2", "programacao1", "discreta1", "pc"], subjects: ["Game Dev"], professors: ["Prof. Lima"] },
   ],
   Infraestrutura_De_Hardware: [
-    { id: "Analise_de_Desempenho", nome: "Análise de Desempenho", prereq: ["Estatistica", "CalculoI", "CalculoII"] },
-    { id: "Desenvolvimento_de_Aplicacoes_para_TV", nome: "Desenvolvimento de Aplicações para TV", prereq: ["Sistemas_Distribuidos"] },
-    { id: "Internet_Do_Futuro", nome: "Internet do Futuro", prereq: ["redes"] },
-    { id: "Sistemas_Distribuidos", nome: "Sistemas Distribuídos", prereq: ["redes"] },
-    { id: "Computacao_para_analise_de_dados", nome: "Computacao para analise de dados", prereq: ["Estatistica","CalculoI", "CalculoII", "programacao1", "pc"] },
-    { id: "Robotica_Educacional", nome: "Robótica Educacional", prereq: [""] }
+    { id: "Analise_de_Desempenho", nome: "Análise de Desempenho", prereq: ["Estatistica", "CalculoI", "CalculoII"], subjects: ["Performance"], professors: ["Prof. Ferreira"] },
+    { id: "Desenvolvimento_de_Aplicacoes_para_TV", nome: "Desenvolvimento de Aplicações para TV", prereq: ["Sistemas_Distribuidos"], subjects: ["TV Apps"], professors: ["Prof. Rodrigues"] },
+    { id: "Internet_Do_Futuro", nome: "Internet do Futuro", prereq: ["redes"], subjects: ["Future Internet"], professors: ["Prof. Almeida"] },
+    { id: "Sistemas_Distribuidos", nome: "Sistemas Distribuídos", prereq: ["redes"], subjects: ["Distributed Systems"], professors: ["Prof. Gomes"] },
+    { id: "Computacao_para_analise_de_dados", nome: "Computacao para analise de dados", prereq: ["Estatistica","CalculoI", "CalculoII", "programacao1", "pc"], subjects: ["Data Analysis"], professors: ["Prof. Carvalho"] },
+    { id: "Robotica_Educacional", nome: "Robótica Educacional", prereq: [""], subjects: ["Robotics"], professors: ["Prof. Martins"] }
   ],
   Infraestrutura_De_Software: [
-    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"] },
-    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "Estatistica"] }
+    { id: "redes_neurais", nome: "Redes Neurais", prereq: ["ia", "programacao2", "Estatistica"], subjects: ["NN"], professors: ["Prof. Souza"] },
+    { id: "aprendizado_maquina", nome: "Aprendizado de Máquina", prereq: ["ia", "programacao2", "Estatistica"], subjects: ["ML"], professors: ["Prof. Ribeiro"] }
   ]
+};
+
+// Dados para disciplinas obrigatórias
+const DISCIPLINAS_DATA = {
+  fundamentos: { subjects: ["Filosofia da Educação", "História da Educação"], professors: ["Prof. A", "Prof. B"] },
+  educ_brasileira: { subjects: ["Educação Brasileira"], professors: ["Prof. C"] },
+  didatica: { subjects: ["Didática"], professors: ["Prof. D"] },
+  mec: { subjects: ["Metodologia do Ensino"], professors: ["Prof. E"] },
+  pratica1: { subjects: ["Prática I"], professors: ["Prof. F"] },
+  pratica2: { subjects: ["Prática II"], professors: ["Prof. G"] },
+  ead: { subjects: ["Educação a Distância"], professors: ["Prof. H"] },
+  eso3: { subjects: ["ESO III"], professors: ["Prof. I"] },
+  eso4: { subjects: ["ESO IV"], professors: ["Prof. J"] },
+  psi1: { subjects: ["Psicologia I"], professors: ["Prof. K"] },
+  psi2: { subjects: ["Psicologia II"], professors: ["Prof. L"] },
+  algoritmos: { subjects: ["Algoritmos e Estruturas de Dados"], professors: ["Prof. M"] },
+  bd: { subjects: ["Banco de Dados"], professors: ["Prof. N"] },
+  redes: { subjects: ["Redes de Computadores"], professors: ["Prof. O"] },
+  eso1: { subjects: ["ESO I"], professors: ["Prof. P"] },
+  eso2: { subjects: ["ESO II"], professors: ["Prof. Q"] },
+  libras: { subjects: ["Libras"], professors: ["Prof. R"] },
+  tcc: { subjects: ["TCC"], professors: ["Prof. S"] },
+  ProdTexto: { subjects: ["Produção de Texto"], professors: ["Prof. T"] },
+  CalculoI: { subjects: ["Cálculo I"], professors: ["Prof. U"] },
+  CalculoII: { subjects: ["Cálculo II"], professors: ["Prof. V"] },
+  Estatistica: { subjects: ["Estatística Exploratória"], professors: ["Prof. W"] },
+  AlgebraLinear: { subjects: ["Álgebra Linear"], professors: ["Prof. X"] },
+  TecnologianaEducacao: { subjects: ["Tecnologia na Educação"], professors: ["Prof. Y"] },
+  EducaçãodasRelaçõesÉtnicoRaciais: { subjects: ["Educação das Relações Étnico-Raciais"], professors: ["Prof. Z"] },
+  ProjetodeDesenvolvimentodeSoftwareEducacional: { subjects: ["Projeto de Desenvolvimento de Software Educacional"], professors: ["Prof. AA"] },
+  discreta1: { subjects: ["Discreta I"], professors: ["Prof. BB"] },
+  discreta2: { subjects: ["Discreta II"], professors: ["Prof. CC"] },
+  circuitos: { subjects: ["Circuitos Digitais"], professors: ["Prof. DD"] },
+  arquitetura: { subjects: ["Arquitetura de Computadores"], professors: ["Prof. EE"] },
+  so: { subjects: ["Sistemas Operacionais"], professors: ["Prof. FF"] },
+  ihc: { subjects: ["Interação Homem-Máquina"], professors: ["Prof. GG"] },
+  pc: { subjects: ["Pensamento Computacional"], professors: ["Prof. HH"] },
+  programacao1: { subjects: ["Programação I"], professors: ["Prof. II"] },
+  programacao2: { subjects: ["Programação II"], professors: ["Prof. JJ"] },
+  tc: { subjects: ["Teoria da Computação"], professors: ["Prof. KK"] },
+  engsoft: { subjects: ["Engenharia de Software"], professors: ["Prof. LL"] },
+  ia: { subjects: ["Inteligência Artificial"], professors: ["Prof. MM"] },
+  ava: { subjects: ["AVA"], professors: ["Prof. NN"] },
+  lab1: { subjects: ["Laboratório I"], professors: ["Prof. OO"] },
+  lab2: { subjects: ["Laboratório II"], professors: ["Prof. PP"] },
+  ahsc: { subjects: ["AHSC"], professors: ["Prof. QQ"] },
+  metodologia_c: { subjects: ["Metodologia Científica"], professors: ["Prof. RR"] }
 };
 
 /**************************************************
@@ -344,12 +391,45 @@ const Modal = {
 
   show(disciplina) {
     this.title.textContent = disciplina.textContent.trim();
+    const id = disciplina.dataset.id;
+    let subjects = [];
+    let professors = [];
+
+    // Verificar se é disciplina obrigatória
+    if (DISCIPLINAS_DATA[id]) {
+      subjects = DISCIPLINAS_DATA[id].subjects;
+      professors = DISCIPLINAS_DATA[id].professors;
+    } else {
+      // Verificar se é optativa
+      for (const area in OPTATIVAS) {
+        const disc = OPTATIVAS[area].find(d => d.id === id);
+        if (disc) {
+          subjects = disc.subjects;
+          professors = disc.professors;
+          break;
+        }
+      }
+    }
+
+    const subjectsList = subjects.length ? subjects.join('<br>') : 'Nenhum';
+    const professorsList = professors.length ? professors.join('<br>') : 'Nenhum';
+
     this.info.innerHTML = `
       <p><strong>ID:</strong> ${disciplina.dataset.id}</p>
       <p><strong>Carga Horária:</strong> ${disciplina.dataset.ch}h</p>
       <p><strong>Pré-requisitos:</strong> ${disciplina.dataset.prereq ? disciplina.dataset.prereq.split(',').join(', ') : 'Nenhum'}</p>
       <p><strong>Subárea:</strong> ${disciplina.dataset.subarea.replace(/_/g, ' ')}</p>
       ${disciplina.dataset.modalidade ? `<p><strong>Modalidade:</strong> ${disciplina.dataset.modalidade}</p>` : ''}
+      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <tr>
+          <th style="border: 1px solid #ccc; padding: 8px; background: #f0f0f0;">Assuntos</th>
+          <th style="border: 1px solid #ccc; padding: 8px; background: #f0f0f0;">Professores</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">${subjectsList}</td>
+          <td style="border: 1px solid #ccc; padding: 8px; vertical-align: top;">${professorsList}</td>
+        </tr>
+      </table>
       <p><button id="modal-marcar-concluida" data-id="${disciplina.dataset.id}">Marcar como Concluída</button></p>
     `;
     this.element.style.display = 'block';
